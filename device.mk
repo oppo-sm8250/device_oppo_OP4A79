@@ -20,6 +20,12 @@ $(call inherit-product, device/oppo/sm8250-common/sm8250.mk)
 # Inherit proprietary libraries
 $(call inherit-product, vendor/oppo/OP4A79/OP4A79-vendor.mk)
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+
+PRODUCT_ENFORCE_RRO_TARGETS += *
+
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
